@@ -4,7 +4,7 @@ import { defaultServerDataState } from '../../../DataHandler/redux/server/Server
 const TryUseAsyncState1 = () => {
     const { state, setState, deleteState, select, stateSelect } = useAsyncState<{
         name: string
-    }>('kareem', { data: { name: 'kareem' } })
+    }>('kareem', undefined, { data: { name: 'kareem' } })
 
     const nameWithSelect = select(data => data?.name ?? 'placeholder')
     const nameWithStateSelect = stateSelect(

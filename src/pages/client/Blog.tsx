@@ -1,7 +1,7 @@
 import useEchoState from '../../DataHandler/hooks/client/useEchoState'
 
 const Blog = () => {
-    const { state: blog, setState: setBlog } = useEchoState<{ id: string, name: string }>('blog', { id: 'blog-id', name: 'blog-name' })
+    const { state: blog, setState: setBlog } = useEchoState<{ id: string, name: string }>('blog', undefined, { id: 'blog id', name: 'blog name from blog' })
     const { state: post, setState: setPost } = useEchoState<{
         id: string
         name: string

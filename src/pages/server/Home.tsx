@@ -22,7 +22,7 @@ const Home = () => {
             onSuccess(data) {
                 console.log('onSuccess home', data)
             },
-            onError(_, formattedError) {
+            onError(formattedError) {
                 console.log('onError', formattedError)
             },
             selectors: {

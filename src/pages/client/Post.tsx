@@ -4,7 +4,7 @@ const Post = () => {
     const { state: blog, setState: setBlog } = useEchoState<{
         id: string
         name: string
-    }>('blog')
+    }>('blog',)
     const { state: post, setState: setPost } = useEchoState<{
         id: string
         name: string

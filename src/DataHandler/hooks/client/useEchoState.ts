@@ -9,8 +9,6 @@ import {
 //     isPersist?: boolean
 // }
 
-let storedState: any = undefined
-
 const useEchoState = <T>(
     key: string,
     defaultVal?: T,
@@ -19,13 +17,9 @@ const useEchoState = <T>(
 ) => {
     let state: T = useAppSelector(
         (state: RootState) => state.clientDataHandler.data[key]
-    )
-    const dispatch = useDispatch()
+    ) ?? defaultVal;
 
-    if (defaultVal && !initVal && !state) {
-        storedState = defaultVal
-        state = defaultVal
-    }
+    const dispatch = useDispatch()
 
     const setState = (updatedState: ((prevState: T) => T) | Partial<T>) => {
         let newState;
@@ -34,24 +28,6 @@ const useEchoState = <T>(
         } else {
             newState = updatedState
         }
-        storedState = newState
-        dispatch(setClientDataAction({ key, data: newState }))
-    }
-
-    const appendState = <S>(updatedState: S, overrideIfNotPrevVal: boolean = false) => {
-        let newState;
-        if (Array.isArray(storedState)) {
-            newState = [...storedState, updatedState]
-        } else if (storedState instanceof Object) {
-            newState = { ...storedState, ...(updatedState as Partial<T>) }
-        } else {
-            if (overrideIfNotPrevVal) {
-                newState = updatedState
-            } else {
-                return;
-            }
-        }
-        storedState = newState
         dispatch(setClientDataAction({ key, data: newState }))
     }
 
@@ -60,20 +36,17 @@ const useEchoState = <T>(
     }
 
     const deleteState = () => {
-        storedState = undefined
         dispatch(deleteClientDataAction(key))
     }
 
     if (initVal && !state) {
         state = initVal
-        storedState = initVal
         setState(initVal)
     }
 
     return {
         state,
         setState,
-        appendState,
         select,
         deleteState,
     }
