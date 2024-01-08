@@ -26,7 +26,7 @@ const Layout = () => {
                         <Link to="/blog">Client Blog</Link>
                     </li>
                     <li>
-                        <Link to="/pos">Server  Post</Link>
+                        <Link to="/pos">Client  Post</Link>
                     </li>
                 </ul>
             </nav>
