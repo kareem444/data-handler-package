@@ -11,14 +11,17 @@ const Layout = () => {
                     <li>
                         <Link to="/tryUseAsyncState2">Try use async state 2</Link>
                     </li>
+                    <li>
+                        <Link to="/tryUseFetch1">Try use fetch 1</Link>
+                    </li>
+                    <li>
+                        <Link to="/tryUseFetch2">Try use fetch 2</Link>
+                    </li>
+                    <li>
+                        <Link to="/tryUseMutate">Try use mutate</Link>
+                    </li>
                 </ul>
                 <ul>
-                    <li>
-                        <Link to="/">Server Home</Link>
-                    </li>
-                    <li>
-                        <Link to="/user">Server User</Link>
-                    </li>
                     <li>
                         <Link to="/kareem">Kareem</Link>
                     </li>

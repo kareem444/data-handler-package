@@ -1,5 +1,5 @@
-import useAsyncState from '../../../DataHandler/hooks/server/useAsyncState'
-import { defaultServerDataState } from '../../../DataHandler/redux/server/ServerDataHandlerState'
+import useAsyncState from '../../DataHandler/hooks/server/useAsyncState'
+import { defaultServerDataState } from '../../DataHandler/redux/server/ServerDataHandlerState'
 
 const TryUseAsyncState1 = () => {
     const { state, setState, deleteState, select, stateSelect } = useAsyncState<{

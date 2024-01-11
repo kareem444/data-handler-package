@@ -16,7 +16,8 @@ export interface IQueryOptionsProperties {
     isReturnOnlySelectorProperties?: boolean;
     isComputedSelectorMustMatchResponseKey?: boolean;
     isExecuteOnInit?: boolean;
-    isEchoState?: boolean;
+    // isEchoState?: boolean;
+    echoState?: 'all' | 'data' | 'none';
 }
 
 export interface IMutateOptionsProperties {
@@ -32,6 +33,7 @@ export interface IFetchDataHandlerParams {
 
 export interface IMutateHandlerParams {
     queryFn: (param: any) => Promise<any>;
+    key?: string;
     options?: IMutateOptionsProperties;
 }
 
