@@ -32,6 +32,11 @@ const Layout = () => {
                         <Link to="/pos">Client  Post</Link>
                     </li>
                 </ul>
+                <ul>
+                    <li>
+                        <Link to="/pouch">Pouch</Link>
+                    </li>
+                </ul>
             </nav>
             <Outlet />
         </div>

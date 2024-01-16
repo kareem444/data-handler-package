@@ -3,6 +3,7 @@ import { lazy } from "react";
 import TryUseFetch1 from "./pages/server/TryUseFetch1";
 import TryUseFetch2 from "./pages/server/TryUseFetch2";
 import TryUseMutate from "./pages/server/TryUseMutate";
+import PouchPage from "./pages/pouch/PouchPage";
 
 const Layout = lazy(() => import("./pages/Layout"));
 const Kareem = lazy(() => import("./pages/kareem/Kareem"));
@@ -25,6 +26,7 @@ function App() {
             <Route path='tryUseFetch1' element={<TryUseFetch1 />} />
             <Route path='tryUseFetch2' element={<TryUseFetch2 />} />
             <Route path='tryUseMutate' element={<TryUseMutate />} />
+            <Route path='pouch' element={<PouchPage />} />
           </Route>
         </Routes>
       </BrowserRouter>
